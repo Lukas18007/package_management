@@ -1,6 +1,6 @@
-from django.urls import path
+from django.urls import path, include
 from package.views import UpdatePackageStatusView
 
 urlpatterns = [
-    path('package/<int:id>/authorize/', UpdatePackageStatusView.as_view(), name='update-package-status'),
+    path('api/', include('package.urls')),
 ]
